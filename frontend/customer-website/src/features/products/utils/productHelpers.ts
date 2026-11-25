@@ -17,12 +17,16 @@ export const PRICE_BANDS: PriceBand[] = [
 
 export const RING_SIZES = ['4', '4.5', '5', '5.5', '6', '6.5', '7', '7.5', '8', '8.5', '9'];
 
+/** Keian's four metals. `name` matches the product's metal from the backend; `label` is what customers see. */
 export const METAL_SWATCHES = [
-  { name: '14K Yellow Gold', color: '#d9b45a' },
-  { name: '14K White Gold', color: '#e4e4e4' },
-  { name: '14K Rose Gold', color: '#e2a98f' },
-  { name: 'Platinum', color: '#d6d8db' },
+  { name: '14K Yellow Gold', label: '14K Yellow Gold', color: '#d9b45a' },
+  { name: '14K Rose Gold', label: '14K Rose Gold', color: '#e2a98f' },
+  { name: '14K White Gold', label: '14K White Gold', color: '#e4e4e4' },
+  { name: 'Sterling Silver', label: 'Silver 925', color: '#c9ccd1' },
 ];
+
+/** "Sterling Silver" → "Silver 925"; other metals unchanged. */
+export const metalLabel = (metal: string): string => METAL_SWATCHES.find((m) => m.name === metal)?.label ?? metal;
 
 /** Picks a placeholder colour when a product has no photo yet. */
 export const toneForMetal = (metal = ''): Tone => {
@@ -76,7 +80,7 @@ export const specificationRows = (product: Product, selectedMetal = product.meta
   [
     { label: 'Style #', value: product.sku },
     { label: 'Category', value: product.type },
-    { label: 'Metal', value: selectedMetal },
+    { label: 'Metal', value: metalLabel(selectedMetal) },
     { label: 'Metal Purity', value: metalPurity(selectedMetal) },
     { label: 'Diamond Shape', value: product.diamondShape },
     { label: 'Carat Weight', value: product.caratWeight != null ? `${product.caratWeight.toFixed(2)} ct` : undefined },

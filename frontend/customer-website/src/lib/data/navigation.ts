@@ -13,9 +13,6 @@ const METALS = {
   rose: '#e2a98f',
   white: '#e4e4e4',
   silver: '#c9ccd1',
-  platinum: '#d6d8db',
-  mixed: 'linear-gradient(135deg,#d9b45a 0 50%,#e4e4e4 50% 100%)',
-  twoTone: 'linear-gradient(135deg,#d9b45a 0 50%,#e2a98f 50% 100%)',
 };
 
 export const NAV_MENUS: NavMenu[] = [
@@ -67,8 +64,7 @@ export const NAV_MENUS: NavMenu[] = [
           l('Yellow Gold', 'yellow-gold', { swatch: METALS.yellow }),
           l('Rose Gold', 'rose-gold', { swatch: METALS.rose }),
           l('White Gold', 'white-gold', { swatch: METALS.white }),
-          l('Silver', 'sterling-silver', { swatch: METALS.silver }),
-          l('Two-Tone', 'two-tone', { swatch: METALS.twoTone }),
+          l('Silver 925', 'sterling-silver', { swatch: METALS.silver }),
         ],
       },
       {
@@ -138,9 +134,9 @@ export const NAV_MENUS: NavMenu[] = [
         title: 'Shop by Metal',
         links: [
           l('Yellow Gold', 'engagement-yellow-gold', { swatch: METALS.yellow }),
-          l('White Gold', 'engagement-white-gold', { swatch: METALS.white }),
           l('Rose Gold', 'engagement-rose-gold', { swatch: METALS.rose }),
-          l('Platinum', 'engagement-platinum', { swatch: METALS.platinum }),
+          l('White Gold', 'engagement-white-gold', { swatch: METALS.white }),
+          l('Silver 925', 'engagement-silver', { swatch: METALS.silver }),
         ],
       },
       {
@@ -185,9 +181,9 @@ export const NAV_MENUS: NavMenu[] = [
         title: 'Shop by Metal',
         links: [
           l('Yellow Gold', 'wedding-yellow-gold', { swatch: METALS.yellow }),
-          l('White Gold', 'wedding-white-gold', { swatch: METALS.white }),
           l('Rose Gold', 'wedding-rose-gold', { swatch: METALS.rose }),
-          l('Platinum', 'wedding-platinum', { swatch: METALS.platinum }),
+          l('White Gold', 'wedding-white-gold', { swatch: METALS.white }),
+          l('Silver 925', 'wedding-silver', { swatch: METALS.silver }),
         ],
       },
     ],
@@ -227,8 +223,7 @@ export const NAV_MENUS: NavMenu[] = [
           l('Yellow Gold', 'womens-yellow-gold', { swatch: METALS.yellow }),
           l('Rose Gold', 'womens-rose-gold', { swatch: METALS.rose }),
           l('White Gold', 'womens-white-gold', { swatch: METALS.white }),
-          l('Silver', 'womens-silver', { swatch: METALS.silver }),
-          l('Two-Tone', 'womens-two-tone', { swatch: METALS.twoTone }),
+          l('Silver 925', 'womens-silver', { swatch: METALS.silver }),
         ],
       },
     ],

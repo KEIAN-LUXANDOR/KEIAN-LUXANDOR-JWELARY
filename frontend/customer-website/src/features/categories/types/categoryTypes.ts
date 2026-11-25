@@ -7,6 +7,8 @@ export interface MetalCategory {
   id: MetalCategoryId;
   slug: string; // route: /diamond-gold
   title: string;
+  /** Short name for menus and the metal switcher, e.g. "Silver 925". */
+  label: string;
   description: string;
   /** Product metal names that belong in this category. */
   metals: string[];

@@ -13,7 +13,7 @@ import useFetch from '@/hooks/useFetch';
 import useProductDetails from '../hooks/useProductDetails';
 import { getRelatedProducts } from '../services/productService';
 import type { Product } from '../types/productTypes';
-import { isRing, METAL_SWATCHES, RING_SIZES } from '../utils/productHelpers';
+import { isRing, METAL_SWATCHES, metalLabel, RING_SIZES } from '../utils/productHelpers';
 import ProductGallery from './ProductGallery';
 import ProductSpecifications from './ProductSpecifications';
 import ProductGrid from './ProductGrid';
@@ -121,7 +121,7 @@ function ProductView({ product }: { product: Product }) {
 
           <div className="pdp__option">
             <p className="eyebrow">
-              Metal: <span className="muted">{metal}</span>
+              Metal: <span className="muted">{metalLabel(metal)}</span>
             </p>
             <div className="pdp__swatches">
               {METAL_SWATCHES.map((m) => (
@@ -130,7 +130,7 @@ function ProductView({ product }: { product: Product }) {
                   className={metal === m.name ? 'is-active' : ''}
                   style={{ '--sw': m.color } as CSSProperties}
                   onClick={() => setMetal(m.name)}
-                  aria-label={m.name}
+                  aria-label={m.label}
                   aria-pressed={metal === m.name}
                 />
               ))}
