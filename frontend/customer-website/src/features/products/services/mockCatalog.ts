@@ -10,7 +10,6 @@ const METALS: { name: string; tone: Tone }[] = [
   { name: '14K White Gold', tone: 'silver' },
   { name: '14K Rose Gold', tone: 'rose' },
   { name: 'Sterling Silver', tone: 'silver' },
-  { name: 'Platinum', tone: 'silver' },
 ];
 
 const STYLES = ['Diamond', 'Halo', 'Pavé', 'Twisted', 'Bezel Set', 'Beaded', 'Floral', 'Classic', 'Cluster', 'Vintage', 'Sculpted', 'Lattice'];
