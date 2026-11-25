@@ -1,0 +1,11 @@
+{
+  "name": "keian-luxandor",
+  "private": true,
+  "description": "Shortcuts so you can run the website from this top folder. The real website settings are in frontend/customer-website/package.json.",
+  "scripts": {
+    "dev": "npm --prefix frontend/customer-website run dev",
+    "build": "npm --prefix frontend/customer-website run build",
+    "preview": "npm --prefix frontend/customer-website run preview",
+    "install-frontend": "npm --prefix frontend/customer-website install"
+  }
+}

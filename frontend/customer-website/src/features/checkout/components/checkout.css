@@ -1,0 +1,30 @@
+.checkout { display: grid; grid-template-columns: 1.4fr 1fr; gap: clamp(28px, 5vw, 80px); align-items: start; }
+.checkout__form { display: grid; gap: 36px; }
+.checkout__step { display: grid; gap: 20px; }
+.checkout__step h2, .checkout__step-head h2 { font-size: 1.6rem; }
+.checkout__step-head { display: flex; justify-content: space-between; align-items: baseline; }
+.checkout__terms { white-space: normal; align-items: flex-start; }
+.checkout__terms a { text-decoration: underline; text-underline-offset: 3px; }
+.checkout__summary {
+  position: sticky; top: calc(var(--header-h) + 60px);
+  display: grid; gap: 18px; padding: 28px; background: var(--c-sand);
+}
+.checkout__summary h2 { font-size: 1.6rem; }
+.checkout__summary dl { display: grid; grid-template-columns: 1fr auto; gap: 8px; margin: 0; padding-top: 18px; border-top: 1px solid var(--c-line); font-size: var(--fs-sm); }
+.checkout__summary dd { margin: 0; text-align: right; }
+
+/* Payment method radio cards */
+.pay-methods { border: 0; margin: 0; padding: 0; display: grid; gap: 10px; }
+.pay-method {
+  display: flex; gap: 14px; align-items: flex-start; padding: 16px 18px;
+  border: 1px solid var(--c-line); cursor: pointer; transition: border-color var(--dur);
+}
+.pay-method.is-active, .pay-method:hover { border-color: var(--c-ink); }
+.pay-method input { margin-top: 4px; accent-color: var(--c-ink); }
+.pay-method__label { display: block; }
+.pay-method__desc { display: block; font-size: var(--fs-sm); }
+
+@media (max-width: 1023px) {
+  .checkout { grid-template-columns: 1fr; }
+  .checkout__summary { position: static; order: -1; }
+}

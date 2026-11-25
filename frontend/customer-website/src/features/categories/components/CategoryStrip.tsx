@@ -1,0 +1,27 @@
+import Link from 'next/link';
+import { CATEGORIES } from '@/lib/data/home';
+import Media from '@/components/common/Media';
+import Reveal from '@/components/common/Reveal';
+
+/** "Shop by Category" tiles on the home page. */
+export default function CategoryStrip() {
+  return (
+    <section className="section categories">
+      <div className="container">
+        <Reveal className="section-head">
+          <h2>Shop by Category</h2>
+        </Reveal>
+        <Reveal as="ul" className="categories__list">
+          {CATEGORIES.map((c) => (
+            <li key={c.label}>
+              <Link href={c.to} className="categories__item">
+                <Media tone={c.tone} label={c.label} ratio="6 / 7" src={c.image} sizes="(max-width: 767px) 50vw, 20vw" />
+                <span className="categories__label">{c.label}</span>
+              </Link>
+            </li>
+          ))}
+        </Reveal>
+      </div>
+    </section>
+  );
+}

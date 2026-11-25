@@ -1,0 +1,27 @@
+/* Account pages: profile, orders, addresses */
+.account { display: grid; grid-template-columns: 220px 1fr; gap: clamp(28px, 5vw, 72px); align-items: start; }
+.account-nav ul { display: grid; gap: 2px; border-top: 1px solid var(--c-line); }
+.account-nav a, .account-nav button {
+  display: block; width: 100%; text-align: left; padding: 14px 0;
+  border-bottom: 1px solid var(--c-line);
+  font-size: var(--fs-xs); letter-spacing: var(--tracking); text-transform: uppercase; color: var(--c-ink-soft);
+  transition: color var(--dur);
+}
+.account-nav a:hover, .account-nav button:hover, .account-nav a.is-active { color: var(--c-ink); }
+.account-nav a.is-active { font-weight: 400; }
+.account-panel { display: grid; gap: 24px; align-content: start; }
+.account-panel > h2 { font-size: var(--fs-h3); }
+.account-panel .empty-state { justify-items: start; text-align: left; padding-block: 0; }
+
+.address-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+.address-card { position: relative; display: grid; gap: 6px; padding: 22px; border: 1px solid var(--c-line); font-size: var(--fs-sm); }
+.address-card__name { font-size: 1.3rem; }
+.address-card__default { position: absolute; top: 14px; right: 16px; color: var(--c-gold-dark); }
+.address-card__actions { display: flex; gap: 18px; margin-top: 10px; }
+
+@media (max-width: 1023px) {
+  .account { grid-template-columns: 1fr; }
+  .account-nav ul { grid-auto-flow: column; overflow-x: auto; border-top: 0; gap: 22px; }
+  .account-nav a, .account-nav button { white-space: nowrap; border-bottom: 1px solid transparent; padding: 8px 0; }
+  .account-nav a.is-active { border-color: var(--c-ink); }
+}

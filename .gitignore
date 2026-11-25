@@ -1,0 +1,37 @@
+# Applies to the whole project. Each app has its own .gitignore too.
+
+# Dependencies & build output
+node_modules/
+.next/
+out/
+dist/
+*.tsbuildinfo
+next-env.d.ts
+
+# Java / Spring Boot (backend/*)
+target/
+build/
+.gradle/
+*.class
+
+# Secrets — never put passwords on GitHub
+.env
+.env.*
+!.env.example
+
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor folders
+.idea/
+*.iml
+.vscode/*
+!.vscode/extensions.json
+
+# Logs
+*.log
+
+# Packages are installed inside each app, not here
+/package-lock.json

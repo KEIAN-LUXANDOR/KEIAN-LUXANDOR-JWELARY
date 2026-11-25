@@ -1,0 +1,11 @@
+/* Thumbnail strip + main image viewer (product page). */
+.pdp__gallery { display: grid; grid-template-columns: 84px 1fr; gap: 14px; position: sticky; top: calc(var(--header-h) + 60px); }
+.pdp__thumbs { display: grid; gap: 10px; align-content: start; }
+.pdp__thumbs button { border: 1px solid transparent; transition: border-color var(--dur); }
+.pdp__thumbs button.is-active { border-color: var(--c-ink); }
+.pdp__main { position: relative; }
+
+@media (max-width: 1023px) {
+  .pdp__gallery { position: static; grid-template-columns: 1fr; }
+  .pdp__thumbs { grid-template-columns: repeat(4, 1fr); order: 2; }
+}

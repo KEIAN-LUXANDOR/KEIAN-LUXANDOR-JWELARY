@@ -1,0 +1,126 @@
+/* ─────────────────────────────────────────────────────────────
+   Mobile menu (slide-in drawer from the left).
+   Hidden by default — only shows when the burger icon is tapped.
+   ───────────────────────────────────────────────────────────── */
+.drawer {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-overlay);
+  visibility: hidden;
+  pointer-events: none;
+}
+.drawer.is-open {
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* dark background behind the panel */
+.drawer__scrim {
+  position: absolute;
+  inset: 0;
+  background: rgba(17, 17, 17, 0.45);
+  opacity: 0;
+  transition: opacity var(--dur) var(--ease);
+}
+.drawer.is-open .drawer__scrim { opacity: 1; }
+
+/* the white panel that slides in */
+.drawer__panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: min(380px, 88vw);
+  display: flex;
+  flex-direction: column;
+  background: var(--c-bg);
+  box-shadow: var(--shadow);
+  transform: translateX(-100%);
+  transition: transform 0.35s var(--ease);
+}
+.drawer.is-open .drawer__panel { transform: translateX(0); }
+
+.drawer__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: var(--header-h);
+  padding: 0 12px 0 20px;
+  border-bottom: 1px solid var(--c-line);
+}
+.drawer__head .logo { justify-items: start; }
+
+.drawer__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--fs-xs);
+  letter-spacing: var(--tracking);
+  text-transform: uppercase;
+}
+
+.drawer__body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px 20px 32px;
+}
+
+/* level 1: Jewelry, Signature, Engagement Rings… */
+.drawer__list li { border-bottom: 1px solid var(--c-line); }
+.drawer__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 16px 0;
+  font-size: var(--fs-base);
+  text-align: left;
+  transition: color var(--dur);
+}
+.drawer__item:hover { color: var(--c-gold-dark); }
+
+/* Find a Store / Contact / Appointment / Wishlist */
+.drawer__utility {
+  display: grid;
+  gap: 4px;
+  margin-top: 20px;
+}
+.drawer__utility a,
+.drawer__utility button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  font-size: var(--fs-sm);
+  color: var(--c-ink-soft);
+  text-align: left;
+}
+.drawer__utility a:hover,
+.drawer__utility button:hover { color: var(--c-gold-dark); }
+
+/* level 2: sub-menu accordion */
+.drawer__sub-title {
+  display: block;
+  padding: 18px 0 12px;
+  font-size: 1.6rem;
+}
+.drawer__acc { border-bottom: 1px solid var(--c-line); }
+.drawer__acc-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 16px 0;
+  text-align: left;
+}
+.drawer__acc-list {
+  display: grid;
+  gap: 2px;
+  padding-bottom: 14px;
+}
+.drawer__explore { margin-top: 24px; }
+
+/* the drawer is only for small screens */
+@media (min-width: 1024px) {
+  .drawer { display: none; }
+}

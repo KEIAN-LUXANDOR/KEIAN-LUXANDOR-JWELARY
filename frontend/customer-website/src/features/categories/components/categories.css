@@ -1,0 +1,9 @@
+/* Metal switcher shown on /diamond-gold, /diamond-silver, /diamond-rose, /diamond-white */
+.metal-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 28px; padding-block: 22px 0; }
+.metal-nav__link {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: var(--fs-xs); letter-spacing: var(--tracking); text-transform: uppercase;
+  padding-bottom: 6px; border-bottom: 1px solid transparent; transition: border-color var(--dur);
+}
+.metal-nav__link:hover, .metal-nav__link.is-active { border-color: var(--c-ink); }
+.metal-nav__swatch { width: 16px; height: 16px; border-radius: 50%; box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.12); }

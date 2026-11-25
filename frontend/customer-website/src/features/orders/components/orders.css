@@ -1,0 +1,30 @@
+/* Line items (checkout summary, confirmation, order history) */
+.order-items { display: grid; gap: 14px; }
+.order-items__row { display: grid; grid-template-columns: 64px 1fr auto; gap: 14px; align-items: center; font-size: var(--fs-sm); }
+.order-items__thumb { position: relative; display: block; }
+.order-items__qty {
+  position: absolute; top: -8px; right: -8px; min-width: 20px; height: 20px; padding: 0 5px;
+  display: grid; place-items: center; border-radius: 10px; background: var(--c-ink); color: #fff; font-size: 0.68rem;
+}
+.order-items__name { display: block; line-height: 1.35; }
+
+/* Order history */
+.order-list { display: grid; gap: 20px; }
+.order-card { border: 1px solid var(--c-line); padding: 22px; display: grid; gap: 20px; }
+.order-card__head { display: flex; flex-wrap: wrap; gap: 18px 40px; align-items: end; padding-bottom: 18px; border-bottom: 1px solid var(--c-line); font-size: var(--fs-sm); }
+.order-card__id { font-size: 1.3rem; }
+.order-card__status { margin-left: auto; padding: 6px 12px; background: var(--c-sand); font-size: var(--fs-xs); letter-spacing: 0.1em; text-transform: uppercase; }
+
+/* Confirmation */
+.confirm { display: grid; gap: 40px; }
+.confirm__head { text-align: center; display: grid; gap: 12px; justify-items: center; }
+.confirm__head p { max-width: 560px; }
+.confirm__grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: clamp(28px, 5vw, 72px); align-items: start; }
+.confirm__title { font-size: 1.4rem; margin-bottom: 14px; }
+.confirm__aside { display: grid; gap: 6px; padding: 28px; background: var(--c-sand); font-size: var(--fs-sm); }
+.confirm__aside .confirm__title:not(:first-child) { margin-top: 18px; }
+.confirm__aside .btn { margin-top: 22px; }
+.confirm__totals { display: grid; grid-template-columns: 1fr auto; gap: 8px; margin: 24px 0 0; padding-top: 18px; border-top: 1px solid var(--c-line); font-size: var(--fs-sm); }
+.confirm__totals dd { margin: 0; }
+.confirm__totals dt:last-of-type, .confirm__totals dd:last-of-type { font-weight: 400; font-size: 1rem; }
+@media (max-width: 1023px) { .confirm__grid { grid-template-columns: 1fr; } }
