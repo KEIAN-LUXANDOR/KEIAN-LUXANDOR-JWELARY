@@ -1,0 +1,9 @@
+import type { Metadata } from 'next';
+import Dashboard from '@/features/dashboard/components/Dashboard';
+
+export const metadata: Metadata = { title: 'Dashboard' };
+
+// Address: /dashboard
+export default function Page() {
+  return <Dashboard />;
+}
