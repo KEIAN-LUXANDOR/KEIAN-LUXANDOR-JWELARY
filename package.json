@@ -1,11 +1,15 @@
 {
   "name": "keian-luxandor",
   "private": true,
-  "description": "Shortcuts so you can run the website from this top folder. The real website settings are in frontend/customer-website/package.json.",
+  "description": "Shortcuts so you can run the apps from this top folder. The real settings are in frontend/customer-website/package.json and frontend/admin-panel/package.json.",
   "scripts": {
     "dev": "npm --prefix frontend/customer-website run dev",
     "build": "npm --prefix frontend/customer-website run build",
     "preview": "npm --prefix frontend/customer-website run preview",
-    "install-frontend": "npm --prefix frontend/customer-website install"
+    "install-frontend": "npm --prefix frontend/customer-website install",
+    "dev:admin": "npm --prefix frontend/admin-panel run dev",
+    "build:admin": "npm --prefix frontend/admin-panel run build",
+    "start:admin": "npm --prefix frontend/admin-panel run start",
+    "install-admin": "npm --prefix frontend/admin-panel install"
   }
 }

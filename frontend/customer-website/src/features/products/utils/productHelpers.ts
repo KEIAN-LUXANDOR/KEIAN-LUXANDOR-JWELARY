@@ -55,7 +55,8 @@ export const matchesQuery = (text: string, query: string): boolean => {
     .every((w) => t.includes(w));
 };
 
-export const isRing = (product: Product): boolean => /ring|band/i.test(product.type);
+/** True for rings and bands only. Whole words, so "Earrings" does not count as a ring. */
+export const isRing = (product: Product): boolean => /\b(ring|band)s?\b/i.test(product.type);
 
 export const productHref = (product: Pick<Product, 'id'>): string => `/product/${product.id}`;
 
